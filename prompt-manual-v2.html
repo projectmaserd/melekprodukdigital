@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17 Ide Produk Digital Layak Jual — Melek Produk Digital Level #1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg2: #f7f6f3;
+      --text: #1a1a1a;
+      --text2: #5c5c5c;
+      --text3: #999;
+      --border: rgba(0,0,0,0.1);
+      --border2: rgba(0,0,0,0.18);
+      --blue: #185FA5;
+      --blue-bg: #E6F1FB;
+      --green: #3B6D11;
+      --green-bg: #EAF3DE;
+      --green-text: #27500A;
+      --radius: 10px;
+      --radius-lg: 14px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg2);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--green-bg);
+      color: var(--green);
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+
+    .badge-level {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      background: #185FA5;
+      color: #fff;
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+
+    .header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.6rem, 5vw, 2.3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .header h1 em { font-style: italic; color: var(--blue); }
+
+    .header p {
+      font-size: 14.5px;
+      color: var(--text2);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .header p strong { color: var(--text); }
+
+    /* ── Card ── */
+    .card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ── Progress ── */
+    .progress-wrap { display: flex; gap: 6px; margin-bottom: 1.75rem; }
+    .pdot { height: 4px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
+    .pdot.done { background: var(--green); }
+    .pdot.active { background: var(--blue); }
+
+    /* ── Step ── */
+    .step { display: none; animation: fadeUp 0.25s ease; }
+    .step.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 0.5rem; }
+
+    .step-num {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--blue-bg); color: var(--blue);
+      font-size: 13px; font-weight: 500;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .step-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text2);
+      margin-bottom: 1.25rem;
+      margin-left: 42px;
+      line-height: 1.6;
+    }
+
+    /* ── Fields ── */
+    .field { margin-bottom: 1.25rem; }
+
+    .field label {
+      display: block; font-size: 11.5px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text2); margin-bottom: 7px;
+    }
+
+    .field .hint {
+      font-size: 12px; color: var(--text3);
+      margin-top: 5px; line-height: 1.5;
+      font-style: italic;
+    }
+
+    .field textarea, .field input[type="text"] {
+      width: 100%; background: var(--bg2);
+      border: 0.5px solid var(--border); border-radius: var(--radius);
+      padding: 10px 14px; font-size: 14px;
+      font-family: 'DM Sans', sans-serif; color: var(--text);
+      outline: none; transition: border-color 0.2s; line-height: 1.6;
+    }
+
+    .field textarea:focus, .field input:focus { border-color: var(--blue); background: var(--bg); }
+    .field textarea { min-height: 88px; resize: vertical; }
+    .field textarea.tall { min-height: 110px; }
+
+    /* ── Chips ── */
+    .chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .chip {
+      padding: 6px 14px; border-radius: 999px;
+      border: 0.5px solid var(--border2); font-size: 13px;
+      cursor: pointer; background: var(--bg); color: var(--text2);
+      transition: all 0.15s; user-select: none; font-family: 'DM Sans', sans-serif;
+    }
+
+    .chip:hover { border-color: var(--blue); color: var(--blue); }
+    .chip.sel { background: var(--blue-bg); border-color: var(--blue); color: var(--blue); font-weight: 500; }
+
+    /* ── Nav ── */
+    .nav {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 1.75rem; padding-top: 1.25rem; border-top: 0.5px solid var(--border);
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: var(--radius);
+      font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif;
+      cursor: pointer; border: 0.5px solid var(--border2);
+      background: var(--bg); color: var(--text); transition: all 0.15s;
+    }
+
+    .btn:hover { background: var(--bg2); }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .btn-primary:hover { background: #0C447C; }
+
+    .btn-generate {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 14px; font-size: 15px; font-weight: 500;
+      font-family: 'DM Sans', sans-serif; background: var(--green); color: #fff;
+      border: none; border-radius: var(--radius); cursor: pointer;
+      margin-top: 1.25rem; transition: background 0.15s;
+    }
+
+    .btn-generate:hover { background: var(--green-text); }
+    .btn-generate:active { transform: scale(0.98); }
+
+    /* ── Output ── */
+    .output-wrap { display: none; margin-top: 1.5rem; }
+    .output-wrap.vis { display: block; }
+
+    .output-label {
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--text2); margin-bottom: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .output-label .pill {
+      background: var(--green-bg); color: var(--green);
+      padding: 2px 10px; border-radius: 999px; font-size: 10px; font-weight: 500;
+    }
+
+    .output-box {
+      background: var(--bg2); border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
+      font-size: 13px; line-height: 1.9; color: var(--text);
+      white-space: pre-wrap; word-break: break-word;
+      max-height: 460px; overflow-y: auto;
+    }
+
+    .output-actions { display: flex; gap: 8px; margin-top: 0.75rem; flex-wrap: wrap; }
+
+    /* ── How to ── */
+    .how-to {
+      background: var(--blue-bg); border-radius: var(--radius);
+      padding: 1rem 1.25rem; margin-top: 1rem;
+    }
+
+    .how-to h4 {
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--blue); margin-bottom: 8px;
+    }
+
+    .how-to ol {
+      padding-left: 1.25rem; font-size: 13px;
+      color: #0C447C; line-height: 1.9;
+    }
+
+    .ai-links { display: flex; gap: 8px; margin-top: 0.75rem; flex-wrap: wrap; }
+
+    .ai-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 14px; border-radius: var(--radius);
+      font-size: 13px; font-weight: 500; text-decoration: none;
+      border: 0.5px solid var(--border2); background: var(--bg);
+      color: var(--text); transition: all 0.15s; font-family: 'DM Sans', sans-serif;
+    }
+
+    .ai-link:hover { background: var(--bg2); border-color: var(--blue); color: var(--blue); }
+
+    /* ── Footer ── */
+    .footer { text-align: center; margin-top: 2.5rem; font-size: 12px; color: var(--text3); }
+    .footer strong { color: var(--text2); }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge-row">
+    <div class="badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+      Melek Produk Digital
+    </div>
+    <div class="badge-level">Level #1</div>
+  </div>
+
+  <h1>17 Ide Produk Digital<br><em>Layak Jual</em> dari Pengalamanmu</h1>
+
+  <p>Bukan sekadar banyak ide — tapi ide yang punya <strong>buyer jelas</strong>, <strong>problem nyata</strong>, dan <strong>market yang cukup kuat</strong>. Isi 4 langkah di bawah, prompt siap pakai langsung terbentuk.</p>
+</div>
+
+<div class="card">
+  <div class="progress-wrap" id="progress"></div>
+
+  <!-- STEP 1 -->
+  <div class="step active" id="step-0">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">Pengalamanmu yang Bisa Dijual</div>
+    </div>
+    <p class="step-desc">Pengalaman hidup yang spesifik adalah aset terbesar. Semakin detail, semakin tajam ide yang keluar.</p>
+
+    <div class="field">
+      <label>Pengalaman nyata yang paling berkesan</label>
+      <textarea class="tall" id="f-0-0" placeholder="Contoh: 3 tahun jadi guru les privat anak SD di rumah sambil kerja full time, pernah gagal bisnis kuliner dan rugi 15 juta, merawat ayah yang stroke selama 8 bulan..."></textarea>
+      <div class="hint">Semakin spesifik (durasi, konteks, angka) → semakin kuat idenya</div>
+    </div>
+
+    <div class="field">
+      <label>Pelajaran terbesar yang kamu ambil</label>
+      <textarea id="f-0-1" placeholder="Contoh: cara tetap sabar mengajar anak yang susah fokus tanpa membuat mereka trauma, kenapa cashflow lebih penting dari omset di bisnis kecil..."></textarea>
+    </div>
+
+    <div class="field">
+      <label>Pertanyaan yang paling sering orang tanyakan ke kamu</label>
+      <textarea id="f-0-2" placeholder="Contoh: 'Kamu ngajar les sendiri gimana caranya?', 'Kok kamu bisa tenang urus papa yang sakit?', 'Rekomendasiin bisnis yang modal kecil dong'..."></textarea>
+      <div class="hint">Pertanyaan yang berulang = tanda ada demand nyata</div>
+    </div>
+
+    <div class="nav">
+      <span></span>
+      <button class="btn btn-primary" onclick="goStep(1)">
+        Lanjut
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" id="step-1">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">Problem Nyata di Sekitarmu</div>
+    </div>
+    <p class="step-desc">Problem yang layak dijual punya 3 ciri: berulang, menyakitkan, dan belum ada solusi yang memuaskan.</p>
+
+    <div class="field">
+      <label>Masalah spesifik yang sering kamu lihat</label>
+      <textarea class="tall" id="f-1-0" placeholder="Contoh: ibu-ibu di grup parenting selalu panik soal menu MPASI bayi 6 bulan pertama, teman kerja sering lembur tapi gaji habis sebelum tanggal 20, banyak freelancer yang tidak tahu cara negosiasi harga..."></textarea>
+      <div class="hint">Sebutkan konteks spesifiknya — di grup mana, komunitas apa, orang seperti apa</div>
+    </div>
+
+    <div class="field">
+      <label>Siapa yang paling sering mengeluh soal ini?</label>
+      <div class="chip-group">
+        <div class="chip" onclick="toggleChip(this,'1-1')">Teman kerja</div>
+        <div class="chip" onclick="toggleChip(this,'1-1')">Keluarga</div>
+        <div class="chip" onclick="toggleChip(this,'1-1')">Grup WhatsApp</div>
+        <div class="chip" onclick="toggleChip(this,'1-1')">Komunitas online</div>
+        <div class="chip" onclick="toggleChip(this,'1-1')">Tetangga</div>
+        <div class="chip" onclick="toggleChip(this,'1-1')">Murid / klien</div>
+        <div class="chip" onclick="toggleChip(this,'1-1')">Followers medsos</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Kenapa masalah ini belum selesai meski sudah googling?</label>
+      <textarea id="f-1-2" placeholder="Contoh: informasinya terlalu banyak dan membingungkan, tidak ada yang spesifik untuk kondisi Indonesia, semua yang ada terlalu teoritis tidak praktis, kontennya gratis tapi tidak terstruktur..."></textarea>
+      <div class="hint">Ini gap yang bisa kamu isi dengan produkmu</div>
+    </div>
+
+    <div class="nav">
+      <button class="btn" onclick="goStep(0)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Kembali
+      </button>
+      <button class="btn btn-primary" onclick="goStep(2)">
+        Lanjut
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" id="step-2">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">Kemampuan & Kapasitas</div>
+    </div>
+    <p class="step-desc">Produk terbaik lahir dari irisan antara apa yang kamu bisa, apa yang tersedia waktumu, dan apa yang mau orang bayar.</p>
+
+    <div class="field">
+      <label>Skill yang kamu miliki saat ini</label>
+      <textarea id="f-2-0" placeholder="Contoh: menulis konten, desain Canva, presentasi, mengajar, memasak, Excel & data, fotografi HP, public speaking, negosiasi, manajemen waktu..."></textarea>
+    </div>
+
+    <div class="field">
+      <label>Format produk yang paling realistis untuk kamu buat</label>
+      <div class="chip-group">
+        <div class="chip" onclick="toggleChip(this,'2-1')">Ebook / PDF</div>
+        <div class="chip" onclick="toggleChip(this,'2-1')">Template Canva</div>
+        <div class="chip" onclick="toggleChip(this,'2-1')">Video / eCourse</div>
+        <div class="chip" onclick="toggleChip(this,'2-1')">Worksheet / Planner</div>
+        <div class="chip" onclick="toggleChip(this,'2-1')">Komunitas berbayar</div>
+        <div class="chip" onclick="toggleChip(this,'2-1')">Coaching 1-on-1</div>
+        <div class="chip" onclick="toggleChip(this,'2-1')">Newsletter</div>
+        <div class="chip" onclick="toggleChip(this,'2-1')">Webinar / Workshop</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Waktu yang bisa disisihkan per minggu</label>
+      <div class="chip-group">
+        <div class="chip" onclick="toggleChip(this,'2-2')">Kurang dari 3 jam</div>
+        <div class="chip" onclick="toggleChip(this,'2-2')">3–7 jam</div>
+        <div class="chip" onclick="toggleChip(this,'2-2')">7–15 jam</div>
+        <div class="chip" onclick="toggleChip(this,'2-2')">15 jam lebih</div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button class="btn" onclick="goStep(1)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Kembali
+      </button>
+      <button class="btn btn-primary" onclick="goStep(3)">
+        Lanjut
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step" id="step-3">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-title">Buyer & Potensi Pasar</div>
+    </div>
+    <p class="step-desc">Ide yang layak jual punya buyer yang spesifik — bukan "semua orang" tapi seseorang dengan kondisi, masalah, dan urgensi yang jelas.</p>
+
+    <div class="field">
+      <label>Gambaran buyer paling spesifik yang bisa kamu bayangkan</label>
+      <textarea class="tall" id="f-3-0" placeholder="Contoh: ibu dengan anak usia 0–2 tahun yang kerja dari rumah dan tidak punya waktu riset MPASI, karyawan swasta 25–35 tahun yang gaji 5–8 juta tapi selalu habis sebelum tanggal 20..."></textarea>
+      <div class="hint">Semakin spesifik orangnya → semakin mudah membuat produk yang mereka mau beli</div>
+    </div>
+
+    <div class="field">
+      <label>Kisaran harga yang menurutmu realistis</label>
+      <div class="chip-group">
+        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 19rb – 49rb</div>
+        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 50rb – 99rb</div>
+        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 100rb – 299rb</div>
+        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 300rb – 999rb</div>
+        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 1 juta+</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Prioritas utama dari ide yang dihasilkan</label>
+      <div class="chip-group">
+        <div class="chip" onclick="toggleChip(this,'3-2')">Bisa dijual paling cepat</div>
+        <div class="chip" onclick="toggleChip(this,'3-2')">Market paling luas</div>
+        <div class="chip" onclick="toggleChip(this,'3-2')">Paling sesuai skill saya</div>
+        <div class="chip" onclick="toggleChip(this,'3-2')">Modal waktu paling kecil</div>
+        <div class="chip" onclick="toggleChip(this,'3-2')">Potensi harga premium</div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button class="btn" onclick="goStep(2)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Kembali
+      </button>
+      <span></span>
+    </div>
+
+    <button class="btn-generate" onclick="buildPrompt()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+      Buat 17 Ide Produk Layak Jual
+    </button>
+
+    <!-- OUTPUT -->
+    <div class="output-wrap" id="output-wrap">
+      <div class="output-label">
+        Prompt siap pakai <span class="pill">✓ Copy & paste ke AI</span>
+      </div>
+      <div class="output-box" id="output-box"></div>
+
+      <div class="output-actions">
+        <button class="btn btn-primary" onclick="copyPrompt()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          Salin Prompt
+        </button>
+        <button class="btn" onclick="resetForm()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Isi Ulang
+        </button>
+      </div>
+
+      <div class="how-to">
+        <h4>Cara pakai prompt ini</h4>
+        <ol>
+          <li>Klik <strong>Salin Prompt</strong> → buka salah satu AI di bawah</li>
+          <li>Paste prompt → tekan Enter → tunggu AI selesai</li>
+          <li>Dari 17 ide, tandai <strong>3 yang paling resonan</strong> denganmu</li>
+          <li>Validasi ke 5–10 orang di target buyermu sebelum mulai buat</li>
+          <li>Mulai dari yang paling kecil dan paling cepat selesai</li>
+        </ol>
+        <div class="ai-links">
+          <a class="ai-link" href="https://chat.openai.com" target="_blank">ChatGPT →</a>
+          <a class="ai-link" href="https://claude.ai" target="_blank">Claude →</a>
+          <a class="ai-link" href="https://gemini.google.com" target="_blank">Gemini →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <strong>Melek Produk Digital · Level #1</strong> · Gratis & tanpa akun
+</div>
+
+<script>
+  const TOTAL_STEPS = 4;
+  let currentStep = 0;
+  const chipSelections = {};
+
+  function renderProgress() {
+    const wrap = document.getElementById('progress');
+    wrap.innerHTML = Array.from({length: TOTAL_STEPS}, (_, i) =>
+      `<div class="pdot ${i < currentStep ? 'done' : i === currentStep ? 'active' : ''}"></div>`
+    ).join('');
+  }
+
+  function goStep(n) {
+    document.getElementById('step-' + currentStep).classList.remove('active');
+    currentStep = n;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    renderProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleChip(el, group) {
+    el.classList.toggle('sel');
+    if (!chipSelections[group]) chipSelections[group] = new Set();
+    if (el.classList.contains('sel')) chipSelections[group].add(el.textContent.trim());
+    else chipSelections[group].delete(el.textContent.trim());
+  }
+
+  function getChips(group) {
+    return chipSelections[group]?.size ? [...chipSelections[group]].join(', ') : 'tidak dipilih';
+  }
+
+  function getVal(id) {
+    const el = document.getElementById(id);
+    return el?.value.trim() || 'tidak diisi';
+  }
+
+  function buildPrompt() {
+    const data = {
+      pengalaman:     getVal('f-0-0'),
+      pelajaran:      getVal('f-0-1'),
+      seringDitanya:  getVal('f-0-2'),
+      masalahSekitar: getVal('f-1-0'),
+      sumberKeluhan:  getChips('1-1'),
+      gapSolusi:      getVal('f-1-2'),
+      skill:          getVal('f-2-0'),
+      formatProduk:   getChips('2-1'),
+      waktu:          getChips('2-2'),
+      targetBuyer:    getVal('f-3-0'),
+      harga:          getChips('3-1'),
+      prioritas:      getChips('3-2'),
+    };
+
+    const prompt = `Kamu adalah product strategist berpengalaman yang spesialis membantu orang Indonesia menemukan ide produk digital yang benar-benar layak jual — bukan sekadar ide yang terdengar bagus.
+
+Berikut data lengkap tentang saya:
+
+[PENGALAMAN HIDUP SAYA]
+Pengalaman nyata: ${data.pengalaman}
+Yang saya pelajari: ${data.pelajaran}
+Yang sering orang tanyakan ke saya: ${data.seringDitanya}
+
+[PROBLEM NYATA DI SEKITAR SAYA]
+Masalah yang sering saya lihat: ${data.masalahSekitar}
+Siapa yang paling sering mengeluh: ${data.sumberKeluhan}
+Kenapa masalah ini belum selesai meski sudah googling: ${data.gapSolusi}
+
+[KEMAMPUAN & KAPASITAS SAYA]
+Skill yang saya miliki: ${data.skill}
+Format produk yang realistis untuk saya buat: ${data.formatProduk}
+Waktu tersedia per minggu: ${data.waktu}
+
+[BUYER & PASAR]
+Gambaran buyer spesifik saya: ${data.targetBuyer}
+Kisaran harga yang realistis: ${data.harga}
+Prioritas utama: ${data.prioritas}
+
+---
+
+TUGASMU:
+Hasilkan tepat 17 ide produk digital yang LAYAK JUAL berdasarkan data di atas.
+
+KRITERIA WAJIB untuk setiap ide — buang ide yang tidak memenuhi ini:
+✗ Buang ide dengan buyer terlalu umum ("semua orang", "siapa saja")
+✗ Buang ide yang problemnya bisa diselesaikan gratis lewat YouTube/Google dalam 5 menit
+✗ Buang ide yang tidak ada urgensinya — orang bisa tunda beli selamanya
+✓ Hanya masukkan ide yang buyernya spesifik, problemnya menyakitkan, dan ada alasan untuk beli sekarang
+
+FORMAT SETIAP IDE (wajib lengkap):
+Nomor. Nama Produk
+
+🎯 Buyer Spesifik: [bukan "ibu-ibu" tapi "ibu dengan anak 0-2 tahun yang kerja dari rumah"]
+😣 Pain Point: [masalah yang benar-benar terasa menyakitkan, bukan sekadar "kurang tahu"]
+💡 Kenapa Mau Bayar: [alasan spesifik kenapa mereka rela keluarkan uang untuk ini]
+📦 Format: [ebook / template / kursus video / worksheet / komunitas / coaching / dll]
+💰 Harga Rekomendasi: [angka spesifik dalam rupiah]
+⚡ Kecepatan Bisa Dijual: [estimasi minggu/bulan sejak mulai dibuat]
+🏆 Skor Kelayakan: [1-10] — [1 kalimat alasan jujur]
+
+Urutkan dari skor kelayakan tertinggi ke terendah.
+Tulis dalam bahasa Indonesia yang tajam dan langsung ke poin.
+Jangan tambahkan kalimat pembuka atau penutup — langsung mulai dari ide nomor 1.`;
+
+    document.getElementById('output-box').textContent = prompt;
+    document.getElementById('output-wrap').classList.add('vis');
+    setTimeout(() => {
+      document.getElementById('output-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  function copyPrompt() {
+    const text = document.getElementById('output-box').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.output-actions .btn-primary');
+      const orig = btn.innerHTML;
+      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Tersalin!`;
+      setTimeout(() => { btn.innerHTML = orig; }, 2000);
+    });
+  }
+
+  function resetForm() {
+    document.querySelectorAll('textarea').forEach(el => el.value = '');
+    document.querySelectorAll('.chip.sel').forEach(c => c.classList.remove('sel'));
+    Object.keys(chipSelections).forEach(k => delete chipSelections[k]);
+    document.getElementById('output-wrap').classList.remove('vis');
+    goStep(0);
+  }
+
+  renderProgress();
+</script>
+</body>
+</html>
