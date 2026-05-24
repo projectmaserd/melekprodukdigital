@@ -3,495 +3,360 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>17 Ide Produk Digital Layak Jual — Melek Produk Digital Level #1</title>
+  <title>Curhat = Cuan — Melek Produk Digital</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #ffffff;
-      --bg2: #f7f6f3;
-      --text: #1a1a1a;
-      --text2: #5c5c5c;
-      --text3: #999;
-      --border: rgba(0,0,0,0.1);
-      --border2: rgba(0,0,0,0.18);
-      --blue: #185FA5;
-      --blue-bg: #E6F1FB;
-      --green: #3B6D11;
-      --green-bg: #EAF3DE;
-      --green-text: #27500A;
-      --radius: 10px;
-      --radius-lg: 14px;
+      --bg: #ffffff; --bg2: #f7f6f3; --bg3: #f0efe9;
+      --text: #1a1a1a; --text2: #5c5c5c; --text3: #999;
+      --border: rgba(0,0,0,0.1); --border2: rgba(0,0,0,0.18);
+      --blue: #185FA5; --blue-bg: #E6F1FB;
+      --green: #3B6D11; --green-bg: #EAF3DE; --green-text: #27500A;
+      --amber: #92580A; --amber-bg: #FEF3E2;
+      --pink: #A0286A; --pink-bg: #FCE8F3;
+      --purple: #5B3FA6; --purple-bg: #EDE9FB;
+      --radius: 10px; --radius-lg: 14px;
     }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg2);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 2rem 1rem 4rem;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg2); color: var(--text); min-height: 100vh; padding: 2rem 1rem 5rem; }
 
     /* ── Header ── */
-    .header {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: var(--green-bg);
-      color: var(--green);
-      padding: 5px 14px;
-      border-radius: 999px;
-    }
-
-    .badge-level {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      background: #185FA5;
-      color: #fff;
-      padding: 5px 14px;
-      border-radius: 999px;
-    }
-
-    .header h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.6rem, 5vw, 2.3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-    }
-
-    .header h1 em { font-style: italic; color: var(--blue); }
-
-    .header p {
-      font-size: 14.5px;
-      color: var(--text2);
-      line-height: 1.7;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
+    .header { text-align: center; max-width: 600px; margin: 0 auto 2rem; }
+    .badge-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 999px; }
+    .badge-pink { background: var(--pink-bg); color: var(--pink); }
+    .badge-green { background: var(--green-bg); color: var(--green); }
+    .badge-blue { background: var(--blue-bg); color: var(--blue); }
+    .header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 7vw, 3rem); font-weight: 400; line-height: 1.15; margin-bottom: 0.75rem; }
+    .header h1 em { font-style: italic; color: var(--pink); }
+    .header h1 span { color: var(--green); }
+    .header p { font-size: 15px; color: var(--text2); line-height: 1.7; max-width: 480px; margin: 0 auto; }
     .header p strong { color: var(--text); }
+    .header .program-tag { font-size: 12px; color: var(--text3); margin-top: 0.75rem; }
+    .header .program-tag strong { color: var(--blue); }
+
+    /* ── Phase tabs ── */
+    .phase-nav { display: flex; gap: 0; max-width: 640px; margin: 0 auto 1.5rem; background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .phase-tab { flex: 1; padding: 12px 8px; text-align: center; cursor: pointer; font-size: 12px; font-weight: 500; color: var(--text2); border-right: 0.5px solid var(--border); transition: all 0.2s; line-height: 1.4; }
+    .phase-tab:last-child { border-right: none; }
+    .phase-tab:hover { background: var(--bg2); color: var(--text); }
+    .phase-tab.active { background: var(--pink); color: #fff; }
+    .phase-tab .tab-num { display: block; font-size: 18px; font-weight: 400; font-family: 'DM Serif Display', serif; margin-bottom: 2px; }
+
+    /* ── Phase panels ── */
+    .phase { display: none; }
+    .phase.active { display: block; animation: fadeUp 0.25s ease; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
 
     /* ── Card ── */
-    .card {
-      background: var(--bg);
-      border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      max-width: 640px;
-      margin: 0 auto;
-    }
+    .card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem; max-width: 640px; margin: 0 auto; }
 
-    /* ── Progress ── */
-    .progress-wrap { display: flex; gap: 6px; margin-bottom: 1.75rem; }
-    .pdot { height: 4px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
-    .pdot.done { background: var(--green); }
-    .pdot.active { background: var(--blue); }
+    /* ── Chat bubble ── */
+    .chat-section { margin-bottom: 2rem; }
+    .chat-label { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.75rem; }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--pink); color: #fff; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .bubble { background: var(--pink-bg); border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg); padding: 12px 16px; font-size: 14px; line-height: 1.65; color: var(--text); max-width: calc(100% - 44px); }
+    .bubble strong { color: var(--pink); }
+    .bubble .sub { font-size: 12.5px; color: var(--text2); margin-top: 6px; line-height: 1.6; font-style: italic; }
 
-    /* ── Step ── */
-    .step { display: none; animation: fadeUp 0.25s ease; }
-    .step.active { display: block; }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 0.5rem; }
-
-    .step-num {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--blue-bg); color: var(--blue);
-      font-size: 13px; font-weight: 500;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-
-    .step-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; }
-
-    .step-desc {
-      font-size: 13px;
-      color: var(--text2);
-      margin-bottom: 1.25rem;
-      margin-left: 42px;
-      line-height: 1.6;
-    }
-
-    /* ── Fields ── */
-    .field { margin-bottom: 1.25rem; }
-
-    .field label {
-      display: block; font-size: 11.5px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.07em;
-      color: var(--text2); margin-bottom: 7px;
-    }
-
-    .field .hint {
-      font-size: 12px; color: var(--text3);
-      margin-top: 5px; line-height: 1.5;
-      font-style: italic;
-    }
-
-    .field textarea, .field input[type="text"] {
-      width: 100%; background: var(--bg2);
-      border: 0.5px solid var(--border); border-radius: var(--radius);
-      padding: 10px 14px; font-size: 14px;
-      font-family: 'DM Sans', sans-serif; color: var(--text);
-      outline: none; transition: border-color 0.2s; line-height: 1.6;
-    }
-
-    .field textarea:focus, .field input:focus { border-color: var(--blue); background: var(--bg); }
-    .field textarea { min-height: 88px; resize: vertical; }
-    .field textarea.tall { min-height: 110px; }
+    .field { margin-left: 42px; }
+    .field textarea { width: 100%; background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text); outline: none; transition: border-color 0.2s; line-height: 1.7; resize: vertical; }
+    .field textarea:focus { border-color: var(--pink); background: var(--bg); }
+    .field textarea.s { min-height: 80px; }
+    .field textarea.m { min-height: 110px; }
+    .field textarea.l { min-height: 140px; }
 
     /* ── Chips ── */
-    .chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-left: 42px; }
+    .chip { padding: 6px 14px; border-radius: 999px; border: 0.5px solid var(--border2); font-size: 13px; cursor: pointer; background: var(--bg); color: var(--text2); transition: all 0.15s; user-select: none; font-family: 'DM Sans', sans-serif; }
+    .chip:hover { border-color: var(--pink); color: var(--pink); }
+    .chip.sel { background: var(--pink-bg); border-color: var(--pink); color: var(--pink); font-weight: 500; }
 
-    .chip {
-      padding: 6px 14px; border-radius: 999px;
-      border: 0.5px solid var(--border2); font-size: 13px;
-      cursor: pointer; background: var(--bg); color: var(--text2);
-      transition: all 0.15s; user-select: none; font-family: 'DM Sans', sans-serif;
-    }
-
-    .chip:hover { border-color: var(--blue); color: var(--blue); }
-    .chip.sel { background: var(--blue-bg); border-color: var(--blue); color: var(--blue); font-weight: 500; }
-
-    /* ── Nav ── */
-    .nav {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 1.75rem; padding-top: 1.25rem; border-top: 0.5px solid var(--border);
-    }
+    /* ── Divider ── */
+    .divider { border: none; border-top: 0.5px dashed var(--border2); margin: 1.75rem 0; }
 
     /* ── Buttons ── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 9px 18px; border-radius: var(--radius);
-      font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif;
-      cursor: pointer; border: 0.5px solid var(--border2);
-      background: var(--bg); color: var(--text); transition: all 0.15s;
-    }
-
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: var(--radius); font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; border: 0.5px solid var(--border2); background: var(--bg); color: var(--text); transition: all 0.15s; }
     .btn:hover { background: var(--bg2); }
     .btn:active { transform: scale(0.98); }
-    .btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); }
-    .btn-primary:hover { background: #0C447C; }
-
-    .btn-generate {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 14px; font-size: 15px; font-weight: 500;
-      font-family: 'DM Sans', sans-serif; background: var(--green); color: #fff;
-      border: none; border-radius: var(--radius); cursor: pointer;
-      margin-top: 1.25rem; transition: background 0.15s;
-    }
-
-    .btn-generate:hover { background: var(--green-text); }
+    .btn-generate { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px; font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif; border: none; border-radius: var(--radius); cursor: pointer; margin-top: 0.5rem; transition: background 0.15s; }
     .btn-generate:active { transform: scale(0.98); }
+    .bg-pink { background: var(--pink); color: #fff; }
+    .bg-pink:hover { background: #7D1E53; }
+    .bg-amber { background: var(--amber); color: #fff; }
+    .bg-amber:hover { background: #7A4808; }
+    .bg-purple { background: var(--purple); color: #fff; }
+    .bg-purple:hover { background: #432E7A; }
 
     /* ── Output ── */
     .output-wrap { display: none; margin-top: 1.5rem; }
     .output-wrap.vis { display: block; }
-
-    .output-label {
-      font-size: 11px; font-weight: 500; text-transform: uppercase;
-      letter-spacing: 0.07em; color: var(--text2); margin-bottom: 8px;
-      display: flex; align-items: center; gap: 8px;
-    }
-
-    .output-label .pill {
-      background: var(--green-bg); color: var(--green);
-      padding: 2px 10px; border-radius: 999px; font-size: 10px; font-weight: 500;
-    }
-
-    .output-box {
-      background: var(--bg2); border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
-      font-size: 13px; line-height: 1.9; color: var(--text);
-      white-space: pre-wrap; word-break: break-word;
-      max-height: 460px; overflow-y: auto;
-    }
-
+    .output-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text2); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .pill { padding: 2px 10px; border-radius: 999px; font-size: 10px; font-weight: 500; }
+    .pill-pink { background: var(--pink-bg); color: var(--pink); }
+    .pill-amber { background: var(--amber-bg); color: var(--amber); }
+    .pill-purple { background: var(--purple-bg); color: var(--purple); }
+    .output-box { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; font-size: 13px; line-height: 1.9; color: var(--text); white-space: pre-wrap; word-break: break-word; max-height: 460px; overflow-y: auto; }
     .output-actions { display: flex; gap: 8px; margin-top: 0.75rem; flex-wrap: wrap; }
 
     /* ── How to ── */
-    .how-to {
-      background: var(--blue-bg); border-radius: var(--radius);
-      padding: 1rem 1.25rem; margin-top: 1rem;
-    }
-
-    .how-to h4 {
-      font-size: 11px; font-weight: 500; text-transform: uppercase;
-      letter-spacing: 0.07em; color: var(--blue); margin-bottom: 8px;
-    }
-
-    .how-to ol {
-      padding-left: 1.25rem; font-size: 13px;
-      color: #0C447C; line-height: 1.9;
-    }
-
+    .how-to { border-radius: var(--radius); padding: 1rem 1.25rem; margin-top: 1rem; }
+    .how-to-pink { background: var(--pink-bg); }
+    .how-to-amber { background: var(--amber-bg); }
+    .how-to-purple { background: var(--purple-bg); }
+    .how-to h4 { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
+    .how-to-pink h4 { color: var(--pink); }
+    .how-to-amber h4 { color: var(--amber); }
+    .how-to-purple h4 { color: var(--purple); }
+    .how-to ol { padding-left: 1.25rem; font-size: 13px; line-height: 1.9; }
+    .how-to-pink ol { color: #7D1E53; }
+    .how-to-amber ol { color: #7A4808; }
+    .how-to-purple ol { color: #432E7A; }
     .ai-links { display: flex; gap: 8px; margin-top: 0.75rem; flex-wrap: wrap; }
+    .ai-link { display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px; border-radius: var(--radius); font-size: 13px; font-weight: 500; text-decoration: none; border: 0.5px solid var(--border2); background: var(--bg); color: var(--text); transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+    .ai-link:hover { background: var(--bg2); border-color: var(--pink); color: var(--pink); }
 
-    .ai-link {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 7px 14px; border-radius: var(--radius);
-      font-size: 13px; font-weight: 500; text-decoration: none;
-      border: 0.5px solid var(--border2); background: var(--bg);
-      color: var(--text); transition: all 0.15s; font-family: 'DM Sans', sans-serif;
-    }
-
-    .ai-link:hover { background: var(--bg2); border-color: var(--blue); color: var(--blue); }
+    /* ── Simple card (phase 2 & 3) ── */
+    .simple-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem; max-width: 640px; margin: 0 auto; }
+    .phase-header { margin-bottom: 1.75rem; }
+    .phase-header h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.4rem; }
+    .phase-header p { font-size: 13.5px; color: var(--text2); line-height: 1.6; }
+    .simple-field { margin-bottom: 1.25rem; }
+    .simple-field label { display: block; font-size: 11.5px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text2); margin-bottom: 7px; }
+    .simple-field .hint { font-size: 12px; color: var(--text3); margin-top: 5px; line-height: 1.5; font-style: italic; }
+    .simple-field textarea, .simple-field input[type="text"] { width: 100%; background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 10px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text); outline: none; transition: border-color 0.2s; line-height: 1.6; resize: vertical; min-height: 88px; }
+    .simple-field textarea:focus, .simple-field input:focus { border-color: var(--pink); background: var(--bg); }
+    .simple-field input[type="text"] { min-height: auto; }
+    .simple-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 
     /* ── Footer ── */
-    .footer { text-align: center; margin-top: 2.5rem; font-size: 12px; color: var(--text3); }
+    .footer { text-align: center; margin-top: 2.5rem; font-size: 12px; color: var(--text3); line-height: 1.8; }
     .footer strong { color: var(--text2); }
+    .footer .program { color: var(--blue); font-weight: 500; }
   </style>
 </head>
 <body>
 
 <div class="header">
   <div class="badge-row">
-    <div class="badge">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-      Melek Produk Digital
-    </div>
-    <div class="badge-level">Level #1</div>
+    <div class="badge badge-pink">✨ Prompt Builder</div>
+    <div class="badge badge-green">Melek Produk Digital</div>
   </div>
-
-  <h1>17 Ide Produk Digital<br><em>Layak Jual</em> dari Pengalamanmu</h1>
-
-  <p>Bukan sekadar banyak ide — tapi ide yang punya <strong>buyer jelas</strong>, <strong>problem nyata</strong>, dan <strong>market yang cukup kuat</strong>. Isi 4 langkah di bawah, prompt siap pakai langsung terbentuk.</p>
+  <h1><em>Curhat</em> <span>=</span> Cuan</h1>
+  <p>Temukan <strong>25 ide produk digital ebook yang layak jual</strong> dari pengalaman & skill-mu. Cerita jujur, AI bantu nemuin peluangnya.</p>
+  
 </div>
 
-<div class="card">
-  <div class="progress-wrap" id="progress"></div>
-
-  <!-- STEP 1 -->
-  <div class="step active" id="step-0">
-    <div class="step-header">
-      <div class="step-num">1</div>
-      <div class="step-title">Pengalamanmu yang Bisa Dijual</div>
-    </div>
-    <p class="step-desc">Pengalaman hidup yang spesifik adalah aset terbesar. Semakin detail, semakin tajam ide yang keluar.</p>
-
-    <div class="field">
-      <label>Pengalaman nyata yang paling berkesan</label>
-      <textarea class="tall" id="f-0-0" placeholder="Contoh: 3 tahun jadi guru les privat anak SD di rumah sambil kerja full time, pernah gagal bisnis kuliner dan rugi 15 juta, merawat ayah yang stroke selama 8 bulan..."></textarea>
-      <div class="hint">Semakin spesifik (durasi, konteks, angka) → semakin kuat idenya</div>
-    </div>
-
-    <div class="field">
-      <label>Pelajaran terbesar yang kamu ambil</label>
-      <textarea id="f-0-1" placeholder="Contoh: cara tetap sabar mengajar anak yang susah fokus tanpa membuat mereka trauma, kenapa cashflow lebih penting dari omset di bisnis kecil..."></textarea>
-    </div>
-
-    <div class="field">
-      <label>Pertanyaan yang paling sering orang tanyakan ke kamu</label>
-      <textarea id="f-0-2" placeholder="Contoh: 'Kamu ngajar les sendiri gimana caranya?', 'Kok kamu bisa tenang urus papa yang sakit?', 'Rekomendasiin bisnis yang modal kecil dong'..."></textarea>
-      <div class="hint">Pertanyaan yang berulang = tanda ada demand nyata</div>
-    </div>
-
-    <div class="nav">
-      <span></span>
-      <button class="btn btn-primary" onclick="goStep(1)">
-        Lanjut
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
+<!-- Phase tabs -->
+<div class="phase-nav">
+  <div class="phase-tab active" onclick="switchPhase(0)">
+    <span class="tab-num">💬</span>Curhat Dulu
   </div>
-
-  <!-- STEP 2 -->
-  <div class="step" id="step-1">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div class="step-title">Problem Nyata di Sekitarmu</div>
-    </div>
-    <p class="step-desc">Problem yang layak dijual punya 3 ciri: berulang, menyakitkan, dan belum ada solusi yang memuaskan.</p>
-
-    <div class="field">
-      <label>Masalah spesifik yang sering kamu lihat</label>
-      <textarea class="tall" id="f-1-0" placeholder="Contoh: ibu-ibu di grup parenting selalu panik soal menu MPASI bayi 6 bulan pertama, teman kerja sering lembur tapi gaji habis sebelum tanggal 20, banyak freelancer yang tidak tahu cara negosiasi harga..."></textarea>
-      <div class="hint">Sebutkan konteks spesifiknya — di grup mana, komunitas apa, orang seperti apa</div>
-    </div>
-
-    <div class="field">
-      <label>Siapa yang paling sering mengeluh soal ini?</label>
-      <div class="chip-group">
-        <div class="chip" onclick="toggleChip(this,'1-1')">Teman kerja</div>
-        <div class="chip" onclick="toggleChip(this,'1-1')">Keluarga</div>
-        <div class="chip" onclick="toggleChip(this,'1-1')">Grup WhatsApp</div>
-        <div class="chip" onclick="toggleChip(this,'1-1')">Komunitas online</div>
-        <div class="chip" onclick="toggleChip(this,'1-1')">Tetangga</div>
-        <div class="chip" onclick="toggleChip(this,'1-1')">Murid / klien</div>
-        <div class="chip" onclick="toggleChip(this,'1-1')">Followers medsos</div>
-      </div>
-    </div>
-
-    <div class="field">
-      <label>Kenapa masalah ini belum selesai meski sudah googling?</label>
-      <textarea id="f-1-2" placeholder="Contoh: informasinya terlalu banyak dan membingungkan, tidak ada yang spesifik untuk kondisi Indonesia, semua yang ada terlalu teoritis tidak praktis, kontennya gratis tapi tidak terstruktur..."></textarea>
-      <div class="hint">Ini gap yang bisa kamu isi dengan produkmu</div>
-    </div>
-
-    <div class="nav">
-      <button class="btn" onclick="goStep(0)">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Kembali
-      </button>
-      <button class="btn btn-primary" onclick="goStep(2)">
-        Lanjut
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
+  <div class="phase-tab" onclick="switchPhase(1)">
+    <span class="tab-num">🔍</span>Validasi Ide
   </div>
-
-  <!-- STEP 3 -->
-  <div class="step" id="step-2">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div class="step-title">Kemampuan & Kapasitas</div>
-    </div>
-    <p class="step-desc">Produk terbaik lahir dari irisan antara apa yang kamu bisa, apa yang tersedia waktumu, dan apa yang mau orang bayar.</p>
-
-    <div class="field">
-      <label>Skill yang kamu miliki saat ini</label>
-      <textarea id="f-2-0" placeholder="Contoh: menulis konten, desain Canva, presentasi, mengajar, memasak, Excel & data, fotografi HP, public speaking, negosiasi, manajemen waktu..."></textarea>
-    </div>
-
-    <div class="field">
-      <label>Format produk yang paling realistis untuk kamu buat</label>
-      <div class="chip-group">
-        <div class="chip" onclick="toggleChip(this,'2-1')">Ebook / PDF</div>
-        <div class="chip" onclick="toggleChip(this,'2-1')">Template Canva</div>
-        <div class="chip" onclick="toggleChip(this,'2-1')">Video / eCourse</div>
-        <div class="chip" onclick="toggleChip(this,'2-1')">Worksheet / Planner</div>
-        <div class="chip" onclick="toggleChip(this,'2-1')">Komunitas berbayar</div>
-        <div class="chip" onclick="toggleChip(this,'2-1')">Coaching 1-on-1</div>
-        <div class="chip" onclick="toggleChip(this,'2-1')">Newsletter</div>
-        <div class="chip" onclick="toggleChip(this,'2-1')">Webinar / Workshop</div>
-      </div>
-    </div>
-
-    <div class="field">
-      <label>Waktu yang bisa disisihkan per minggu</label>
-      <div class="chip-group">
-        <div class="chip" onclick="toggleChip(this,'2-2')">Kurang dari 3 jam</div>
-        <div class="chip" onclick="toggleChip(this,'2-2')">3–7 jam</div>
-        <div class="chip" onclick="toggleChip(this,'2-2')">7–15 jam</div>
-        <div class="chip" onclick="toggleChip(this,'2-2')">15 jam lebih</div>
-      </div>
-    </div>
-
-    <div class="nav">
-      <button class="btn" onclick="goStep(1)">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Kembali
-      </button>
-      <button class="btn btn-primary" onclick="goStep(3)">
-        Lanjut
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
+  <div class="phase-tab" onclick="switchPhase(2)">
+    <span class="tab-num">📖</span>Outline Ebook
   </div>
+</div>
 
-  <!-- STEP 4 -->
-  <div class="step" id="step-3">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div class="step-title">Buyer & Potensi Pasar</div>
-    </div>
-    <p class="step-desc">Ide yang layak jual punya buyer yang spesifik — bukan "semua orang" tapi seseorang dengan kondisi, masalah, dan urgensi yang jelas.</p>
+<!-- ════════════ PHASE 1 ════════════ -->
+<div class="phase active" id="phase-0">
+  <div class="card">
 
-    <div class="field">
-      <label>Gambaran buyer paling spesifik yang bisa kamu bayangkan</label>
-      <textarea class="tall" id="f-3-0" placeholder="Contoh: ibu dengan anak usia 0–2 tahun yang kerja dari rumah dan tidak punya waktu riset MPASI, karyawan swasta 25–35 tahun yang gaji 5–8 juta tapi selalu habis sebelum tanggal 20..."></textarea>
-      <div class="hint">Semakin spesifik orangnya → semakin mudah membuat produk yang mereka mau beli</div>
-    </div>
-
-    <div class="field">
-      <label>Kisaran harga yang menurutmu realistis</label>
-      <div class="chip-group">
-        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 19rb – 49rb</div>
-        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 50rb – 99rb</div>
-        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 100rb – 299rb</div>
-        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 300rb – 999rb</div>
-        <div class="chip" onclick="toggleChip(this,'3-1')">Rp 1 juta+</div>
+    <!-- Q1 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">😊</div>
+        <div class="bubble">
+          <strong>Hei, kenalin dulu dong!</strong><br>
+          Namamu siapa dan sekarang keseharian kamu ngapain aja? Cerita santai aja, ga perlu formal.
+          <div class="sub">Contoh: "Nama aku Sari, 32 tahun. Sehari-hari aku ibu rumah tangga 2 anak sambil kerja part time sebagai admin online shop dari rumah. Udah 4 tahun jalani ini, lumayan chaos tapi seru!"</div>
+        </div>
+      </div>
+      <div class="field">
+        <textarea class="s" id="q1" placeholder="Cerita di sini..."></textarea>
       </div>
     </div>
 
-    <div class="field">
-      <label>Prioritas utama dari ide yang dihasilkan</label>
-      <div class="chip-group">
-        <div class="chip" onclick="toggleChip(this,'3-2')">Bisa dijual paling cepat</div>
-        <div class="chip" onclick="toggleChip(this,'3-2')">Market paling luas</div>
-        <div class="chip" onclick="toggleChip(this,'3-2')">Paling sesuai skill saya</div>
-        <div class="chip" onclick="toggleChip(this,'3-2')">Modal waktu paling kecil</div>
-        <div class="chip" onclick="toggleChip(this,'3-2')">Potensi harga premium</div>
+    <hr class="divider">
+
+    <!-- Q2 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">🤔</div>
+        <div class="bubble">
+          <strong>Wah menarik! Sekarang ceritain pengalaman hidupmu yang paling berkesan.</strong><br>
+          Pengalaman kerja, bisnis, keluarga, struggle, atau momen yang bener-bener ngubah cara pandangmu. Yang bikin kamu ngerasa "ini beneran ngubah hidupku".
+          <div class="sub">Contoh: "Jadi ibu rumah tangga sambil kerja itu ternyata susah banget di awal. Aku pernah nangis di kamar mandi karena ngerasa gagal di dua peran sekaligus. Tapi setelah 2 tahun trial error, aku nemuin sistem yang bikin aku bisa produktif tanpa ngorbanin waktu sama anak."</div>
+        </div>
+      </div>
+      <div class="field">
+        <textarea class="l" id="q2" placeholder="Cerita pengalamanmu di sini... boleh panjang!"></textarea>
       </div>
     </div>
 
-    <div class="nav">
-      <button class="btn" onclick="goStep(2)">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Kembali
-      </button>
-      <span></span>
+    <hr class="divider">
+
+    <!-- Q3 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">💡</div>
+        <div class="bubble">
+          <strong>Dari semua yang kamu alami itu, kamu belajar apa?</strong><br>
+          Pelajaran, insight, atau cara pandang yang berubah — yang mungkin orang lain belum tau atau susah nemuin sendiri.
+          <div class="sub">Contoh: "Aku belajar bahwa produktif itu bukan soal berapa jam kerja, tapi soal sistem. Aku nemuin metode 'blok waktu 90 menit' yang bikin aku bisa selesaiin kerjaan admin dalam 3 jam, bukan seharian. Dan yang paling penting: cara komunikasi sama suami soal pembagian peran rumah tangga biar ga ada yang ngerasa kelelahan sendirian."</div>
+        </div>
+      </div>
+      <div class="field">
+        <textarea class="m" id="q3" placeholder="Pelajaran yang kamu dapat..."></textarea>
+      </div>
     </div>
 
-    <button class="btn-generate" onclick="buildPrompt()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-      Buat 17 Ide Produk Layak Jual
+    <hr class="divider">
+
+    <!-- Q4 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">🙋</div>
+        <div class="bubble">
+          <strong>Orang-orang sering nanya apa ke kamu?</strong><br>
+          Pertanyaan yang sering banget muncul sampai kamu capek jelasinnya, haha. Dari temen, keluarga, atau orang yang baru kenal.
+          <div class="sub">Contoh: "Sering banget ditanya: 'Kamu kerja dari rumah sambil jagain anak, gimana caranya ga gila?', 'Suamimu supportif ga?', 'Aplikasi apa yang kamu pake buat ngatur jadwal?', 'Gimana cara kamu jelasin ke klien kalau kamu juga harus urus anak?'"</div>
+        </div>
+      </div>
+      <div class="field">
+        <textarea class="s" id="q4" placeholder="Pertanyaan yang sering orang tanyain ke kamu..."></textarea>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Q5 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">🛠️</div>
+        <div class="bubble">
+          <strong>Kamu jago di bidang apa aja?</strong><br>
+          Skill, keahlian, atau hal-hal yang kamu bisa lakuin lebih baik dari kebanyakan orang. Termasuk yang kamu anggap "biasa" tapi orang lain susah!
+          <div class="sub">Contoh: "Aku lumayan jago ngatur waktu dan bikin jadwal harian yang realistis, nulis caption medsos yang engaging, komunikasi sama klien lewat WA biar terkesan profesional meski sambil jagain anak, sama desain template sederhana di Canva buat kebutuhan online shop."</div>
+        </div>
+      </div>
+      <div class="field">
+        <textarea class="m" id="q5" placeholder="Skill dan keahlianmu..."></textarea>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Q6 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">😣</div>
+        <div class="bubble">
+          <strong>Masalah apa yang sering kamu lihat di orang-orang sekitarmu?</strong><br>
+          Yang bikin kamu mikir "kok pada kesulitan hal ini ya, padahal aku udah nemuin caranya..." — di grup WA, medsos, atau dari cerita temen.
+          <div class="sub">Contoh: "Di grup ibu-ibu yang aku ikutin, banyak banget yang ngeluh: kelelahan karena ngerasa harus sempurna di semua peran, ga tau cara bilang 'tidak' ke suami/keluarga tanpa drama, bingung gimana cara kerja dari rumah tanpa ngorbanin kualitas momong anak, dan ga punya sistem keuangan yang jelas padahal ada pemasukan dari jualan online."</div>
+        </div>
+      </div>
+      <div class="field">
+        <textarea class="m" id="q6" placeholder="Masalah yang sering kamu lihat..."></textarea>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Q7 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">👥</div>
+        <div class="bubble">
+          <strong>Kalau kamu bayangin, siapa yang paling butuh bantuanmu?</strong><br>
+          Orang seperti apa yang paling mungkin kamu bantu — dan mereka mau bayar untuk itu?
+        </div>
+      </div>
+      <div class="chip-wrap" style="margin-bottom:0.75rem">
+        <div class="chip" onclick="toggleChip(this,'buyer')">Ibu rumah tangga</div>
+        <div class="chip" onclick="toggleChip(this,'buyer')">Karyawan kantoran</div>
+        <div class="chip" onclick="toggleChip(this,'buyer')">Freelancer</div>
+        <div class="chip" onclick="toggleChip(this,'buyer')">Mahasiswa</div>
+        <div class="chip" onclick="toggleChip(this,'buyer')">Fresh graduate</div>
+        <div class="chip" onclick="toggleChip(this,'buyer')">Pemilik usaha kecil</div>
+        <div class="chip" onclick="toggleChip(this,'buyer')">Content creator</div>
+        <div class="chip" onclick="toggleChip(this,'buyer')">Orang tua baru</div>
+      </div>
+      <div class="field">
+        <textarea class="s" id="q7" placeholder="Contoh: Ibu muda 25–35 tahun yang baru punya anak pertama dan mulai kerja dari rumah, sering ngerasa overwhelmed dan butuh sistem yang simpel..."></textarea>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Q8 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">⏰</div>
+        <div class="bubble">
+          <strong>Realitanya, berapa waktu yang bisa kamu sisihin?</strong><br>
+          Buat bikin & jualan produk digital per minggu kira-kira berapa jam?
+        </div>
+      </div>
+      <div class="chip-wrap">
+        <div class="chip" onclick="toggleChip(this,'waktu')">Kurang dari 3 jam</div>
+        <div class="chip" onclick="toggleChip(this,'waktu')">3–7 jam</div>
+        <div class="chip" onclick="toggleChip(this,'waktu')">7–15 jam</div>
+        <div class="chip" onclick="toggleChip(this,'waktu')">15 jam lebih</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Q9 -->
+    <div class="chat-section">
+      <div class="chat-label">
+        <div class="avatar">💰</div>
+        <div class="bubble">
+          <strong>Terakhir — kamu ngebayanginnya mau jual di kisaran harga berapa?</strong><br>
+          Ga ada yang salah, ini buat bantu AI kasih rekomendasi yang realistis buat kamu.
+        </div>
+      </div>
+      <div class="chip-wrap">
+        <div class="chip" onclick="toggleChip(this,'harga')">Rp 19rb – 49rb</div>
+        <div class="chip" onclick="toggleChip(this,'harga')">Rp 50rb – 99rb</div>
+        <div class="chip" onclick="toggleChip(this,'harga')">Rp 100rb – 299rb</div>
+        <div class="chip" onclick="toggleChip(this,'harga')">Rp 300rb – 999rb</div>
+        <div class="chip" onclick="toggleChip(this,'harga')">Rp 1 juta+</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <button class="btn-generate bg-pink" onclick="buildPrompt1()">
+      ✨ Temukan 25 Ide Ebook dari Curhatanku
     </button>
 
-    <!-- OUTPUT -->
-    <div class="output-wrap" id="output-wrap">
-      <div class="output-label">
-        Prompt siap pakai <span class="pill">✓ Copy & paste ke AI</span>
-      </div>
-      <div class="output-box" id="output-box"></div>
-
+    <div class="output-wrap" id="out-1">
+      <div class="output-label">Prompt siap pakai <span class="pill pill-pink">✓ Copy & paste ke AI</span></div>
+      <div class="output-box" id="outbox-1"></div>
       <div class="output-actions">
-        <button class="btn btn-primary" onclick="copyPrompt()">
+        <button class="btn bg-pink" style="color:#fff" onclick="copyOut('outbox-1',this)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
           Salin Prompt
         </button>
         <button class="btn" onclick="resetForm()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-          Isi Ulang
+          Cerita Ulang
         </button>
       </div>
-
-      <div class="how-to">
-        <h4>Cara pakai prompt ini</h4>
+      <div class="how-to how-to-pink">
+        <h4>Langkah selanjutnya</h4>
         <ol>
-          <li>Klik <strong>Salin Prompt</strong> → buka salah satu AI di bawah</li>
-          <li>Paste prompt → tekan Enter → tunggu AI selesai</li>
-          <li>Dari 17 ide, tandai <strong>3 yang paling resonan</strong> denganmu</li>
-          <li>Validasi ke 5–10 orang di target buyermu sebelum mulai buat</li>
-          <li>Mulai dari yang paling kecil dan paling cepat selesai</li>
+          <li>Salin prompt → buka AI favoritmu di bawah</li>
+          <li>Paste → Enter → baca 25 ide yang keluar</li>
+          <li>Dari 25 ide, AI akan rekomendasikan <strong>5 yang paling cocok dan layak jual</strong> untukmu</li>
+          <li>Pilih 1 yang paling bikin kamu excited</li>
+          <li>Lanjut ke tab <strong>🔍 Validasi Ide</strong> sebelum mulai buat</li>
         </ol>
         <div class="ai-links">
           <a class="ai-link" href="https://chat.openai.com" target="_blank">ChatGPT →</a>
@@ -504,138 +369,358 @@
   </div>
 </div>
 
+<!-- ════════════ PHASE 2 ════════════ -->
+<div class="phase" id="phase-1">
+  <div class="simple-card">
+    <div class="phase-header">
+      <h2>🔍 Validasi Ide Produkmu</h2>
+      <p>Udah dapat ide dari curhatanmu? Sebelum langsung bikin, pastiin dulu ada orang yang beneran mau beli. Isi di bawah — prompt validasi siap terbentuk.</p>
+    </div>
+
+    <div class="simple-field">
+      <label>Ide produk yang mau divalidasi</label>
+      <textarea id="v-ide" placeholder="Contoh: Ebook panduan produktif kerja dari rumah sambil momong anak untuk ibu muda yang baru mulai WFH..."></textarea>
+      <div class="hint">Salin salah satu dari 5 rekomendasi terkuat yang dihasilkan AI di Tab 1</div>
+    </div>
+    <div class="simple-field">
+      <label>Target buyer spesifiknya</label>
+      <textarea id="v-buyer" placeholder="Contoh: Ibu muda 25–35 tahun yang baru punya anak 0–3 tahun, kerja dari rumah, sering ngerasa overwhelmed dan bersalah karena ngerasa ga maksimal di dua peran sekaligus..."></textarea>
+    </div>
+    <div class="simple-field">
+      <label>Harga yang kamu rencanakan</label>
+      <div class="simple-chips">
+        <div class="chip" onclick="toggleChip(this,'v-harga')">Rp 19rb – 49rb</div>
+        <div class="chip" onclick="toggleChip(this,'v-harga')">Rp 50rb – 99rb</div>
+        <div class="chip" onclick="toggleChip(this,'v-harga')">Rp 100rb – 299rb</div>
+        <div class="chip" onclick="toggleChip(this,'v-harga')">Rp 300rb – 999rb</div>
+        <div class="chip" onclick="toggleChip(this,'v-harga')">Rp 1 juta+</div>
+      </div>
+    </div>
+    <div class="simple-field">
+      <label>Pengalaman pribadimu yang relevan</label>
+      <textarea id="v-pengalaman" placeholder="Contoh: Aku sendiri udah 4 tahun WFH sambil jagain 2 anak. Pernah di titik hampir menyerah, tapi nemuin sistem yang akhirnya bikin semuanya lebih tertata..."></textarea>
+      <div class="hint">Pengalaman nyata = kepercayaan yang tidak bisa dibeli</div>
+    </div>
+
+    <button class="btn-generate bg-amber" onclick="buildPrompt2()">
+      🔍 Buat Prompt Validasi
+    </button>
+
+    <div class="output-wrap" id="out-2">
+      <div class="output-label">Prompt validasi <span class="pill pill-amber">✓ Copy & paste ke AI</span></div>
+      <div class="output-box" id="outbox-2"></div>
+      <div class="output-actions">
+        <button class="btn bg-amber" style="color:#fff" onclick="copyOut('outbox-2',this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          Salin Prompt
+        </button>
+      </div>
+      <div class="how-to how-to-amber">
+        <h4>Cara pakai</h4>
+        <ol>
+          <li>Salin prompt → paste ke AI → baca hasil analisanya</li>
+          <li>Ambil 7 pertanyaan validasi yang dihasilkan</li>
+          <li>Tanyakan ke 5–10 orang di target buyermu (DM, WA, Google Form)</li>
+          <li>Kalau 3 dari 10 bilang mau beli → lanjut bikin!</li>
+          <li>Lanjut ke tab <strong>📖 Outline Ebook</strong></li>
+        </ol>
+        <div class="ai-links">
+          <a class="ai-link" href="https://chat.openai.com" target="_blank">ChatGPT →</a>
+          <a class="ai-link" href="https://claude.ai" target="_blank">Claude →</a>
+          <a class="ai-link" href="https://gemini.google.com" target="_blank">Gemini →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PHASE 3 ════════════ -->
+<div class="phase" id="phase-2">
+  <div class="simple-card">
+    <div class="phase-header">
+      <h2>📖 Outline Ebook Siap Tulis</h2>
+      <p>Ide udah divalidasi? Sekarang bangun kerangka ebooknya. Isi detail di bawah — prompt outline langsung terbentuk.</p>
+    </div>
+
+    <div class="simple-field">
+      <label>Topik / judul sementara ebook</label>
+      <input type="text" id="e-topik" placeholder="Contoh: Produktif WFH Sambil Momong: Sistem 90 Menit untuk Ibu yang Kerja dari Rumah">
+    </div>
+    <div class="simple-field">
+      <label>Target buyer spesifik</label>
+      <textarea id="e-buyer" placeholder="Contoh: Ibu muda 25–35 tahun, punya anak 0–3 tahun, baru mulai WFH, sering ngerasa overwhelmed dan bersalah..."></textarea>
+    </div>
+    <div class="simple-field">
+      <label>Problem utama yang diselesaikan</label>
+      <textarea id="e-problem" placeholder="Contoh: Ngerasa gagal di dua peran sekaligus, kerjaan ga kelar tapi anak juga ga keurus maksimal, kelelahan tapi ga tau harus mulai dari mana..."></textarea>
+    </div>
+    <div class="simple-field">
+      <label>Transformasi yang pembaca rasakan setelah baca ebook ini</label>
+      <textarea id="e-transformasi" placeholder="Contoh: Dari overwhelmed dan ngerasa bersalah terus → punya sistem harian yang jelas, kerjaan beres, waktu sama anak berkualitas, dan ga lagi ngerasa harus sempurna di semua hal..."></textarea>
+      <div class="hint">Transformasi yang jelas = judul yang kuat = lebih mudah dijual</div>
+    </div>
+    <div class="simple-field">
+      <label>Pengalaman & keahlianmu yang relevan</label>
+      <textarea id="e-pengalaman" placeholder="Contoh: 4 tahun WFH sambil jagain 2 anak, nemuin sistem blok waktu 90 menit yang udah dipraktekin ratusan ibu di komunitas, sering sharing di grup parenting dengan 15rb+ member..."></textarea>
+    </div>
+    <div class="simple-field">
+      <label>Harga jual rencana</label>
+      <div class="simple-chips">
+        <div class="chip" onclick="toggleChip(this,'e-harga')">Rp 19rb – 49rb</div>
+        <div class="chip" onclick="toggleChip(this,'e-harga')">Rp 50rb – 99rb</div>
+        <div class="chip" onclick="toggleChip(this,'e-harga')">Rp 100rb – 299rb</div>
+        <div class="chip" onclick="toggleChip(this,'e-harga')">Rp 300rb – 999rb</div>
+        <div class="chip" onclick="toggleChip(this,'e-harga')">Rp 1 juta+</div>
+      </div>
+    </div>
+    <div class="simple-field" style="margin-top:1rem">
+      <label>Panjang ebook yang diinginkan</label>
+      <div class="simple-chips">
+        <div class="chip" onclick="toggleChip(this,'e-panjang')">Mini (10–20 hal)</div>
+        <div class="chip" onclick="toggleChip(this,'e-panjang')">Sedang (20–40 hal)</div>
+        <div class="chip" onclick="toggleChip(this,'e-panjang')">Lengkap (40–80 hal)</div>
+        <div class="chip" onclick="toggleChip(this,'e-panjang')">Komprehensif (80+ hal)</div>
+      </div>
+    </div>
+
+    <button class="btn-generate bg-purple" onclick="buildPrompt3()">
+      📖 Buat Prompt Outline Ebook
+    </button>
+
+    <div class="output-wrap" id="out-3">
+      <div class="output-label">Prompt outline ebook <span class="pill pill-purple">✓ Copy & paste ke AI</span></div>
+      <div class="output-box" id="outbox-3"></div>
+      <div class="output-actions">
+        <button class="btn bg-purple" style="color:#fff" onclick="copyOut('outbox-3',this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          Salin Prompt
+        </button>
+      </div>
+      <div class="how-to how-to-purple">
+        <h4>Langkah setelah dapat outline</h4>
+        <ol>
+          <li>Review outline — hapus yang ga relevan, tambah yang kurang</li>
+          <li>Mulai tulis dari bab yang paling kamu kuasai, bukan dari awal</li>
+          <li>Minta AI tulis draft tiap sub-bab, lalu edit dengan gaya & pengalamanmu</li>
+          <li>Desain di Canva (cari template "ebook") → export PDF</li>
+          <li>Jual di Gumroad, Trakteer, atau Lynk.id 🎉</li>
+        </ol>
+        <div class="ai-links">
+          <a class="ai-link" href="https://chat.openai.com" target="_blank">ChatGPT →</a>
+          <a class="ai-link" href="https://claude.ai" target="_blank">Claude →</a>
+          <a class="ai-link" href="https://gemini.google.com" target="_blank">Gemini →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="footer">
-  <strong>Melek Produk Digital · Level #1</strong> · Gratis & tanpa akun
+  <strong>Curhat = Cuan</strong> · Melek Produk Digital · Dibuat dengan ❤️
+  
 </div>
 
 <script>
-  const TOTAL_STEPS = 4;
-  let currentStep = 0;
+  function switchPhase(n) {
+    document.querySelectorAll('.phase').forEach((p,i) => p.classList.toggle('active', i===n));
+    document.querySelectorAll('.phase-tab').forEach((t,i) => t.classList.toggle('active', i===n));
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
   const chipSelections = {};
-
-  function renderProgress() {
-    const wrap = document.getElementById('progress');
-    wrap.innerHTML = Array.from({length: TOTAL_STEPS}, (_, i) =>
-      `<div class="pdot ${i < currentStep ? 'done' : i === currentStep ? 'active' : ''}"></div>`
-    ).join('');
-  }
-
-  function goStep(n) {
-    document.getElementById('step-' + currentStep).classList.remove('active');
-    currentStep = n;
-    document.getElementById('step-' + currentStep).classList.add('active');
-    renderProgress();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   function toggleChip(el, group) {
     el.classList.toggle('sel');
     if (!chipSelections[group]) chipSelections[group] = new Set();
     if (el.classList.contains('sel')) chipSelections[group].add(el.textContent.trim());
     else chipSelections[group].delete(el.textContent.trim());
   }
+  function getChips(group) { return chipSelections[group]?.size ? [...chipSelections[group]].join(', ') : 'tidak dipilih'; }
+  function getVal(id) { const el=document.getElementById(id); return el?.value.trim()||'tidak diisi'; }
 
-  function getChips(group) {
-    return chipSelections[group]?.size ? [...chipSelections[group]].join(', ') : 'tidak dipilih';
-  }
-
-  function getVal(id) {
-    const el = document.getElementById(id);
-    return el?.value.trim() || 'tidak diisi';
-  }
-
-  function buildPrompt() {
-    const data = {
-      pengalaman:     getVal('f-0-0'),
-      pelajaran:      getVal('f-0-1'),
-      seringDitanya:  getVal('f-0-2'),
-      masalahSekitar: getVal('f-1-0'),
-      sumberKeluhan:  getChips('1-1'),
-      gapSolusi:      getVal('f-1-2'),
-      skill:          getVal('f-2-0'),
-      formatProduk:   getChips('2-1'),
-      waktu:          getChips('2-2'),
-      targetBuyer:    getVal('f-3-0'),
-      harga:          getChips('3-1'),
-      prioritas:      getChips('3-2'),
-    };
-
-    const prompt = `Kamu adalah product strategist berpengalaman yang spesialis membantu orang Indonesia menemukan ide produk digital yang benar-benar layak jual — bukan sekadar ide yang terdengar bagus.
-
-Berikut data lengkap tentang saya:
-
-[PENGALAMAN HIDUP SAYA]
-Pengalaman nyata: ${data.pengalaman}
-Yang saya pelajari: ${data.pelajaran}
-Yang sering orang tanyakan ke saya: ${data.seringDitanya}
-
-[PROBLEM NYATA DI SEKITAR SAYA]
-Masalah yang sering saya lihat: ${data.masalahSekitar}
-Siapa yang paling sering mengeluh: ${data.sumberKeluhan}
-Kenapa masalah ini belum selesai meski sudah googling: ${data.gapSolusi}
-
-[KEMAMPUAN & KAPASITAS SAYA]
-Skill yang saya miliki: ${data.skill}
-Format produk yang realistis untuk saya buat: ${data.formatProduk}
-Waktu tersedia per minggu: ${data.waktu}
-
-[BUYER & PASAR]
-Gambaran buyer spesifik saya: ${data.targetBuyer}
-Kisaran harga yang realistis: ${data.harga}
-Prioritas utama: ${data.prioritas}
-
----
-
-TUGASMU:
-Hasilkan tepat 17 ide produk digital yang LAYAK JUAL berdasarkan data di atas.
-
-KRITERIA WAJIB untuk setiap ide — buang ide yang tidak memenuhi ini:
-✗ Buang ide dengan buyer terlalu umum ("semua orang", "siapa saja")
-✗ Buang ide yang problemnya bisa diselesaikan gratis lewat YouTube/Google dalam 5 menit
-✗ Buang ide yang tidak ada urgensinya — orang bisa tunda beli selamanya
-✓ Hanya masukkan ide yang buyernya spesifik, problemnya menyakitkan, dan ada alasan untuk beli sekarang
-
-FORMAT SETIAP IDE (wajib lengkap):
-Nomor. Nama Produk
-
-🎯 Buyer Spesifik: [bukan "ibu-ibu" tapi "ibu dengan anak 0-2 tahun yang kerja dari rumah"]
-😣 Pain Point: [masalah yang benar-benar terasa menyakitkan, bukan sekadar "kurang tahu"]
-💡 Kenapa Mau Bayar: [alasan spesifik kenapa mereka rela keluarkan uang untuk ini]
-📦 Format: [ebook / template / kursus video / worksheet / komunitas / coaching / dll]
-💰 Harga Rekomendasi: [angka spesifik dalam rupiah]
-⚡ Kecepatan Bisa Dijual: [estimasi minggu/bulan sejak mulai dibuat]
-🏆 Skor Kelayakan: [1-10] — [1 kalimat alasan jujur]
-
-Urutkan dari skor kelayakan tertinggi ke terendah.
-Tulis dalam bahasa Indonesia yang tajam dan langsung ke poin.
-Jangan tambahkan kalimat pembuka atau penutup — langsung mulai dari ide nomor 1.`;
-
-    document.getElementById('output-box').textContent = prompt;
-    document.getElementById('output-wrap').classList.add('vis');
-    setTimeout(() => {
-      document.getElementById('output-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  }
-
-  function copyPrompt() {
-    const text = document.getElementById('output-box').textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      const btn = document.querySelector('.output-actions .btn-primary');
+  function copyOut(boxId, btn) {
+    navigator.clipboard.writeText(document.getElementById(boxId).textContent).then(() => {
       const orig = btn.innerHTML;
-      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Tersalin!`;
+      btn.innerHTML = '✓ Tersalin!';
       setTimeout(() => { btn.innerHTML = orig; }, 2000);
     });
   }
 
   function resetForm() {
-    document.querySelectorAll('textarea').forEach(el => el.value = '');
+    document.querySelectorAll('textarea').forEach(el => el.value='');
     document.querySelectorAll('.chip.sel').forEach(c => c.classList.remove('sel'));
     Object.keys(chipSelections).forEach(k => delete chipSelections[k]);
-    document.getElementById('output-wrap').classList.remove('vis');
-    goStep(0);
+    document.getElementById('out-1').classList.remove('vis');
+    window.scrollTo({top:0,behavior:'smooth'});
   }
 
-  renderProgress();
+  function buildPrompt1() {
+    const d = {
+      profil: getVal('q1'), pengalaman: getVal('q2'), pelajaran: getVal('q3'),
+      seringDitanya: getVal('q4'), skill: getVal('q5'), masalah: getVal('q6'),
+      buyer: getVal('q7'), buyerChip: getChips('buyer'),
+      waktu: getChips('waktu'), harga: getChips('harga'),
+    };
+    const buyerFinal = d.buyerChip !== 'tidak dipilih'
+      ? d.buyerChip + (d.buyer !== 'tidak diisi' ? ' — ' + d.buyer : '')
+      : d.buyer;
+
+    const prompt = `Kamu adalah product strategist berpengalaman yang spesialis membantu orang Indonesia menemukan ide produk digital ebook yang benar-benar layak jual — bukan sekadar ide yang terdengar bagus.
+
+Berikut adalah curhatan jujur dari seseorang yang ingin membuat produk digital:
+
+[SIAPA MEREKA]
+${d.profil}
+
+[PENGALAMAN HIDUP YANG BERKESAN]
+${d.pengalaman}
+
+[PELAJARAN YANG DIDAPAT]
+${d.pelajaran}
+
+[YANG SERING ORANG TANYAKAN KE MEREKA]
+${d.seringDitanya}
+
+[SKILL & KEAHLIAN]
+${d.skill}
+
+[MASALAH YANG SERING MEREKA LIHAT DI SEKITAR]
+${d.masalah}
+
+[TARGET BUYER YANG DIBAYANGKAN]
+${buyerFinal}
+
+[WAKTU TERSEDIA PER MINGGU]
+${d.waktu}
+
+[KISARAN HARGA YANG DIINGINKAN]
+${d.harga}
+
+---
+
+TUGASMU:
+Berdasarkan curhatan di atas, hasilkan tepat 25 ide produk digital EBOOK yang layak jual.
+
+FILTER WAJIB — buang ide yang:
+✗ Buyernya terlalu umum ("semua orang", "siapa saja")
+✗ Problemnya bisa diselesaikan gratis lewat YouTube/Google dalam 5 menit
+✗ Tidak ada urgensinya — orang bisa tunda beli selamanya
+✗ Tidak nyambung dengan pengalaman nyata orang ini
+
+FORMAT SETIAP IDE:
+Nomor. Nama Produk
+
+🎯 Buyer Spesifik: [detail dan spesifik, bukan generik]
+😣 Pain Point: [masalah yang benar-benar terasa menyakitkan]
+💡 Kenapa Mau Bayar: [alasan spesifik mereka rela keluarkan uang]
+📦 Format Ebook: [panduan / workbook / template + penjelasan / studi kasus / dll]
+💰 Harga Rekomendasi: [angka spesifik dalam rupiah]
+⚡ Estimasi Waktu Buat: [berapa minggu/bulan sesuai waktu tersedia]
+🏆 Skor Kelayakan: [1-10] — [1 kalimat alasan jujur]
+
+Setelah 25 ide, tambahkan bagian:
+
+---
+⭐ 5 REKOMENDASI TERBAIK UNTUK ORANG INI
+
+Pilih 5 ide terkuat dari 25 di atas yang paling cocok dengan pengalaman, skill, waktu, dan target buyer mereka. Jelaskan dalam 2–3 kalimat kenapa setiap ide ini layak diprioritaskan.
+
+Urutkan dari yang paling direkomendasikan.
+---
+
+Tulis dalam bahasa Indonesia yang hangat dan langsung ke poin.
+Langsung mulai dari ide nomor 1 tanpa kalimat pembuka.`;
+
+    document.getElementById('outbox-1').textContent = prompt;
+    document.getElementById('out-1').classList.add('vis');
+    setTimeout(() => document.getElementById('out-1').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+  }
+
+  function buildPrompt2() {
+    const d = { ide: getVal('v-ide'), buyer: getVal('v-buyer'), harga: getChips('v-harga'), pengalaman: getVal('v-pengalaman') };
+    const prompt = `Kamu adalah market researcher spesialis produk digital Indonesia.
+
+Saya punya ide produk berikut:
+- Ide: ${d.ide}
+- Target buyer: ${d.buyer}
+- Harga rencana: ${d.harga}
+- Pengalaman saya yang relevan: ${d.pengalaman}
+
+Tolong bantu validasi ide ini secara jujur:
+
+1. ANALISIS DEMAND
+   - Apakah problem ini cukup menyakitkan untuk dibayar solusinya?
+   - Seberapa besar kemungkinan target buyer ini mau beli?
+   - Di mana sinyal demand ini bisa ditemukan? (forum, grup FB, Tokopedia, Twitter/X, TikTok)
+
+2. ANALISIS KOMPETITOR
+   - Sudah ada produk serupa yang dijual di Indonesia?
+   - Kalau ada — apa kelemahannya yang bisa saya isi?
+   - Kalau belum ada — kenapa? Peluang atau memang marketnya kecil?
+
+3. ANALISIS HARGA
+   - Apakah harga ${d.harga} realistis untuk target buyer ini?
+   - Berapa harga yang paling optimal?
+
+4. 7 PERTANYAAN VALIDASI
+   Buatkan 7 pertanyaan yang bisa ditanyakan langsung ke calon buyer (via DM, WA, atau Google Form) untuk membuktikan apakah mereka benar-benar mau beli — bukan sekadar tertarik.
+
+5. VERDICT JUJUR
+   - Skor kelayakan: [1-10]
+   - Alasan jujur: [2–3 kalimat]
+   - Kalau skor di bawah 7: apa yang perlu diubah agar lebih layak jual?
+
+Tulis dalam bahasa Indonesia yang tajam dan langsung ke poin.`;
+
+    document.getElementById('outbox-2').textContent = prompt;
+    document.getElementById('out-2').classList.add('vis');
+    setTimeout(() => document.getElementById('out-2').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+  }
+
+  function buildPrompt3() {
+    const d = {
+      topik: getVal('e-topik'), buyer: getVal('e-buyer'), problem: getVal('e-problem'),
+      transformasi: getVal('e-transformasi'), pengalaman: getVal('e-pengalaman'),
+      harga: getChips('e-harga'), panjang: getChips('e-panjang'),
+    };
+    const prompt = `Kamu adalah ghostwriter berpengalaman spesialis ebook non-fiksi Indonesia.
+
+Saya akan membuat ebook dengan detail berikut:
+- Topik/judul sementara: ${d.topik}
+- Target buyer: ${d.buyer}
+- Problem utama yang diselesaikan: ${d.problem}
+- Transformasi yang pembaca rasakan: ${d.transformasi}
+- Pengalaman & keahlian saya: ${d.pengalaman}
+- Harga jual rencana: ${d.harga}
+- Panjang target: ${d.panjang}
+
+Tolong buatkan:
+
+1. 3 PILIHAN JUDUL EBOOK
+   a. Judul yang menekankan transformasi/hasil akhir
+   b. Judul yang menekankan kecepatan/kemudahan
+   c. Judul yang menekankan rasa sakit yang diselesaikan
+   (Setiap judul boleh ada subjudul)
+
+2. OUTLINE LENGKAP
+   - Pendahuluan: hook + cerita relatable + janji buku
+   - Bab 1 sampai selesai (sesuaikan dengan target panjang)
+   - Setiap bab: judul bab + 3–5 sub-poin + 1 kalimat penjelasan per sub-poin
+   - Penutup + CTA (ajakan tindakan selanjutnya)
+
+3. DRAFT HALAMAN PERTAMA
+   Tuliskan draft pembuka ebook (300–400 kata) yang langsung menarik pembaca untuk terus baca — mulai dengan cerita atau fakta yang mengejutkan.
+
+4. ESTIMASI PRODUKSI
+   - Berapa total kata yang perlu ditulis?
+   - Berapa halaman A4 estimasinya?
+   - Berapa lama waktu penulisan yang realistis jika menulis 1–2 jam per hari?
+
+Tulis dalam bahasa Indonesia yang natural, hangat, dan mudah dipahami pembaca awam.`;
+
+    document.getElementById('outbox-3').textContent = prompt;
+    document.getElementById('out-3').classList.add('vis');
+    setTimeout(() => document.getElementById('out-3').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+  }
 </script>
 </body>
 </html>
